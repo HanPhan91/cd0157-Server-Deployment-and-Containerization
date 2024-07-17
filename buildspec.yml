@@ -17,8 +17,7 @@ phases:
       - echo 'export PATH=$PWD/:$PATH' >> $HOME/.bashrc
       - echo `kubectl version --short --client`
       - python -m pip install --upgrade --force pip
-      - wget -nv https://download.opensuse.org/repositories/home:obs_mhogomchungu/xUbuntu_18.04/Release.key -O Release.key
-      - sudo apt-key add - < Release.key
+      - sudo apt-key adv –keyserver hkp://keys.gnupg.net:80 –-recv-keys E88979FB9B30ACF2
       - apt-get update && apt-get -y install jq && pip install --upgrade awscli
   pre_build:
     commands:
